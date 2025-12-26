@@ -28,7 +28,6 @@ const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
-      {/* <SiteLoader/> */}
       {loading && <NameLoader onFinish={() => setLoading(false)} />}
        <Header
         onMenuClick={() => {
