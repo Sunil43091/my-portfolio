@@ -1,34 +1,30 @@
 "use client";
 
-import { useRef, useState, useCallback, useEffect } from "react";
+import { useRef, useState, useCallback } from "react";
 import { Lock, X } from "lucide-react";
 
-const OWNER_PIN = "1234"; // 🔴 apna PIN yahan change karo
-const STORAGE_KEY = "profile-avatar";
+const OWNER_PIN = "1234"; // 🔴 apna secret PIN yahan rakho
 
 export default function AvatarUpload() {
   const fileRef = useRef<HTMLInputElement | null>(null);
 
-  const [image, setImage] = useState<string | null>(null);
+  const [image, setImage] = useState<string | null>(() => {
+    if (typeof window === "undefined") return null;
+    return localStorage.getItem("profile-avatar");
+  });
+
   const [showModal, setShowModal] = useState(false);
   const [pin, setPin] = useState("");
   const [error, setError] = useState("");
 
-  // ✅ Load image AFTER page loads (hydration fix)
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-    const savedImage = localStorage.getItem(STORAGE_KEY);
-    if (savedImage) setImage(savedImage);
-  }, []);
-
-  // 🔓 Open password modal
+  // Open popup
   const handleUnlock = () => {
     setShowModal(true);
     setPin("");
     setError("");
   };
 
-  // 🔐 Verify PIN
+  // Check PIN
   const handleSubmit = useCallback(() => {
     if (pin === OWNER_PIN) {
       setShowModal(false);
@@ -38,20 +34,14 @@ export default function AvatarUpload() {
     }
   }, [pin]);
 
-  // 🖼️ Image upload handler
+  // Image change
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const file = e.target.files?.[0];
       if (!file) return;
 
       if (!file.type.startsWith("image/")) {
-        alert("Please upload a valid image file");
-        return;
-      }
-
-      // ⚠️ Optional: size check (2MB)
-      if (file.size > 2 * 1024 * 1024) {
-        alert("Image must be less than 2MB");
+        alert("Please upload an image file");
         return;
       }
 
@@ -59,7 +49,7 @@ export default function AvatarUpload() {
       reader.onload = () => {
         const base64 = reader.result as string;
         setImage(base64);
-        localStorage.setItem(STORAGE_KEY, base64);
+        localStorage.setItem("profile-avatar", base64);
       };
       reader.readAsDataURL(file);
     },
@@ -70,18 +60,12 @@ export default function AvatarUpload() {
     <>
       {/* Avatar */}
       <div className="relative mx-auto w-40 h-40 group">
-        {image ? (
-          <img
-            src={image}
-            alt="Avatar"
-            className="w-full h-full rounded-3xl object-cover border border-white/10"
-            draggable={false}
-          />
-        ) : (
-          <div className="w-full h-full rounded-3xl bg-white/10 flex items-center justify-center text-sm text-white/50">
-            No Image
-          </div>
-        )}
+        <img
+          src={image ?? "https://i.pravatar.cc/300"}
+          alt="Avatar"
+          className="w-full h-full rounded-3xl object-cover border border-white/10"
+          draggable={false}
+        />
 
         {/* Lock Overlay */}
         <button
@@ -92,7 +76,7 @@ export default function AvatarUpload() {
             bg-black/40 opacity-0
             flex items-center justify-center
             group-hover:opacity-100
-            transition
+            transition cursor-pointer
           "
           aria-label="Change profile photo"
         >
@@ -109,14 +93,14 @@ export default function AvatarUpload() {
         />
       </div>
 
-      {/* 🔐 PASSWORD MODAL */}
+      {/* 🔐 PASSWORD POPUP */}
       {showModal && (
-        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60">
-          <div className="relative w-[90%] max-w-sm rounded-3xl bg-black border border-white/10 p-6 text-white">
+        <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/60">
+          <div className="w-[90%] max-w-sm rounded-3xl bg-black border border-white/10 p-6 text-white relative">
             {/* Close */}
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-white"
+              className="absolute top-4 right-4 text-white hover:text-white"
             >
               <X size={18} />
             </button>
@@ -125,7 +109,7 @@ export default function AvatarUpload() {
               Owner Access
             </h3>
 
-            <p className="text-sm text-white/70 text-center mb-4">
+            <p className="text-sm text-white text-center mb-4">
               Enter password to change profile photo
             </p>
 
@@ -137,7 +121,7 @@ export default function AvatarUpload() {
               className="
                 w-full rounded-xl bg-black border border-white/20
                 px-4 py-3 text-white outline-none
-                focus:border-white
+                focus:border-(--primary)
               "
             />
 
@@ -150,7 +134,7 @@ export default function AvatarUpload() {
             <button
               onClick={handleSubmit}
               className="
-                mt-5 w-full rounded-full bg-white
+                mt-5 w-full rounded-full bg-(--primary)
                 py-3 text-black font-semibold
                 hover:scale-[1.03] transition
               "
