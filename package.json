@@ -14,7 +14,6 @@
     "@tailwindcss/vite": "^4.1.18",
     "aos": "^2.3.4",
     "lucide-react": "^0.562.0",
-    "next": "^16.1.1",
     "ngrok": "^5.0.0-beta.2",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
