@@ -61,7 +61,7 @@ export default function AvatarUpload() {
       {/* Avatar */}
       <div className="relative mx-auto w-40 h-40 group">
         <img
-          src={image ?? "https://i.pravatar.cc/300"}
+          src={image ?? ""}
           alt="Avatar"
           className="w-full h-full rounded-3xl object-cover border border-white/10"
           draggable={false}
