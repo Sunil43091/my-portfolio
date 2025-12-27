@@ -89,7 +89,7 @@ export default function ProfileCard() {
 
       {/* Resume Button */}
       <a
-        href="/resume/Sunil_Kumar_Resume.pdf"
+        href="/resume/Sunil-Kumar-Designer.pdf"
         download
         className="
           mt-4 w-full rounded-full border border-(--primary)
