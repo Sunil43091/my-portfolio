@@ -1,5 +1,5 @@
 import Heading from "./Heading";
-import { ShieldUser } from 'lucide-react';
+import { ShieldUser } from "lucide-react";
 
 export default function About() {
   return (
@@ -18,7 +18,7 @@ export default function About() {
             text-sm text-white
           "
         >
-          <ShieldUser className="text-(--primary)" size={20}/> ABOUT ME
+          <ShieldUser className="text-(--primary)" size={20} /> ABOUT ME
         </div>
 
         {/* Heading */}
@@ -26,31 +26,30 @@ export default function About() {
           as="h2"
           className="text-4xl md:text-6xl  font-semibold lg:leading-17 leading-10"
         >
-          Designing clean & modern
-          <span className="text-(--primary) font-normal">
-            digital experiences
+          Designing clean & modern <span className="text-(--primary) font-normal"> digital experiences
           </span>
         </Heading>
 
         {/* Paragraph */}
-        <p className="mt-10 max-w-3xl text-white leading-relaxed text-base md:text-lg ">
-          Hi, I’m <span className="text-(--primary)">Sunil Kumar</span>, a passionate
-          Web Designer with over{" "}
-          <span className="text-(--primary)">4 years of experience</span> creating
-          visually appealing, user-friendly, and responsive websites for
-          businesses and individuals.
+        <p className="mt-10 max-w-3xl text-white leading-relaxed text-base md:text-lg">
+          Hi, I’m <span className="text-(--primary)">Sunil Kumar</span>, a
+          passionate Web Designer & Frontend Developer with over{" "}
+          <span className="text-(--primary)">4+ years of experience</span> in
+          designing and developing visually appealing, user-friendly, and fully
+          responsive websites for businesses and individuals.
         </p>
 
-        <p className="mt-6 max-w-3xl text-white leading-relaxed text-base md:text-lg ">
-          I specialize in modern UI design, responsive layouts, and converting
-          ideas into pixel-perfect web interfaces using HTML, CSS, Tailwind,
-          WordPress, Shopify, and modern frontend tools.
+        <p className="mt-6 max-w-3xl text-white leading-relaxed text-base md:text-lg">
+          I specialize in modern UI/UX design, responsive layouts, and
+          converting designs into pixel-perfect web interfaces using Figma to
+          HTML, HTML, CSS, Tailwind CSS, React.js, Next.js, WordPress,{" "}
+          <span className="text-(--primary)">Shopify, Webflow, and Wix</span>.
         </p>
 
-        <p className="mt-6 max-w-3xl text-white leading-relaxed text-base md:text-lg ">
-          I believe good design is not just about looks—it’s about clarity,
-          usability, and delivering a smooth user experience that helps brands
-          grow online.
+        <p className="mt-6 max-w-3xl text-white leading-relaxed text-base md:text-lg">
+          I believe great design is not just about looks—it’s about clarity,
+          usability, performance, and delivering smooth user experiences that
+          help brands grow and stand out online.
         </p>
       </div>
     </section>

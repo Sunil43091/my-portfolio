@@ -1,4 +1,4 @@
-"use client";
+
 
 import { useEffect, useState } from "react";
 import { Instagram, Twitter, Dribbble, Github, Download } from "lucide-react";

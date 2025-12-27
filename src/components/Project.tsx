@@ -1,4 +1,4 @@
-"use client";
+
 import { useState } from "react";
 import Heading from "./Heading";
 import { FolderOpenDot } from "lucide-react";

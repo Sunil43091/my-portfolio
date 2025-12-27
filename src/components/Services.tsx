@@ -29,7 +29,7 @@ export default function Services() {
       <div className="absolute inset-0" />
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12  md:px-12">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1 mb-8
+        <div className="inline-flex mt-10 items-center gap-2 px-4 py-1 mb-8
         rounded-full border border-white/20 text-sm text-white">
           <Toolbox className="text-(--primary)" size={20}/> SERVICES
         </div>

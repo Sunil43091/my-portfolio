@@ -28,17 +28,20 @@ export default function Hero() {
         </div>
 
         {/* Heading */}
+<Heading as="h1" className="text-4xl md:text-7xl font-semibold">
+  Sunil Kumar <span className="text-(--primary) font-normal"> Web Designer & Frontend Developer
+  </span>
+</Heading>
 
-        <Heading as="h1" className="text-4xl md:text-7xl font-semibold ">
-           Sunil Kumar <span className="text-(--primary) font-normal"> Web Designer</span>
-        </Heading>
+{/* Subtitle */}
+<p className="mt-6 max-w-2xl text-white leading-relaxed">
+  I’m a passionate Web Designer with 4+ years of experience in crafting
+  modern, responsive, and high-performing websites. Skilled in UI/UX design,
+  Figma to HTML, React & Next.js, Tailwind CSS, and WordPress development.
+  I focus on clean design, smooth interactions, and user-centric digital
+  experiences that help brands grow online.
+</p>
 
-        {/* Subtitle */}
-        <p className="mt-6 max-w-2xl text-white leading-relaxed ">
-          I design modern, clean, and user-friendly websites that help
-          businesses stand out online. Passionate about UI design, responsive
-          layouts, and smooth user experiences.
-        </p>
 
         {/* Stats */}
         <div className="md:mt-14 mt-5 flex gap-12">

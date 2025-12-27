@@ -1,4 +1,4 @@
-"use client";
+
 
 import { useRef, useState, useEffect, useCallback } from "react";
 import { Lock, X } from "lucide-react";

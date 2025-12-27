@@ -19,9 +19,12 @@ export default function Footer() {
               SP<span className="text-(--primary)">.</span>
             </h2>
             <p className="text-sm leading-relaxed">
-              Crafting modern websites with clean UI,
-              smooth animations and strong performance.
-            </p>
+  Crafting modern, visually appealing websites with clean UI
+  and intuitive user experiences. Focused on smooth animations,
+  responsive layouts, and strong performance to deliver
+  high-quality digital solutions that help brands grow online.
+</p>
+
           </div>
 
           {/* LINKS */}

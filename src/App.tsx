@@ -1,4 +1,4 @@
-"use client";
+
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
 import { useState } from "react";

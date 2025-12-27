@@ -1,4 +1,4 @@
-"use client";
+
 import { useState } from "react";
 import ProfileCard from "./ProfileCard";
 import { UserRoundPen } from 'lucide-react';
