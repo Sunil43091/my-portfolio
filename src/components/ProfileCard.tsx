@@ -1,5 +1,3 @@
-
-
 import { useEffect, useState } from "react";
 import { Instagram, Twitter, Dribbble, Github, Download } from "lucide-react";
 
@@ -14,8 +12,7 @@ export default function ProfileCard() {
         now.toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
       );
 
-      const currentMinutes =
-        istTime.getHours() * 60 + istTime.getMinutes();
+      const currentMinutes = istTime.getHours() * 60 + istTime.getMinutes();
 
       const start = 9 * 60 + 30; // 9:30 AM
       const end = 18 * 60 + 30; // 6:30 PM
@@ -89,14 +86,14 @@ export default function ProfileCard() {
 
       {/* Resume Button */}
       <a
-        href="/resume/Sunil-Kumar-Designer.pdf"
+        href="/resume/Sunil Kumar Designer.pdf"
         download
         className="
-          mt-4 w-full rounded-full border border-(--primary)
-          py-3 text-(--primary) font-semibold
-          flex items-center justify-center gap-2
-          hover:bg-(--primary)/10 transition
-        "
+    mt-4 w-full rounded-full border border-(--primary)
+    py-3 text-(--primary)font-semibold
+    flex items-center justify-center gap-2
+    hover:bg-(--primary)/10 transition
+  "
       >
         <Download size={18} /> DOWNLOAD RESUME
       </a>
