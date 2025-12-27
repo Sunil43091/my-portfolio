@@ -11,12 +11,10 @@ export default function Footer() {
   return (
     <footer className="text-white lg:py-20 py-10   ">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 ">
-
         {/* TOP */}
         <div className="grid md:grid-cols-3 gap-10 border-t border-white/10 pt-10">
-
           {/* BRAND */}
-          <div>
+          <div className="md:text-start text-center">
             <h2 className="text-3xl font-semibold text-(--primary) mb-3">
               SP<span className="text-(--primary)">.</span>
             </h2>
@@ -27,7 +25,7 @@ export default function Footer() {
           </div>
 
           {/* LINKS */}
-          <div>
+          <div className="md:text-start text-center">
             <h3 className="text-(--primary) mb-4 font-medium">
               Quick Links
             </h3>
@@ -46,9 +44,8 @@ export default function Footer() {
               )}
             </ul>
           </div>
-
           {/* CONTACT */}
-          <div>
+          <div className="md:text-start text-center">
             <h3 className="text-(--primary) mb-4 font-medium">
               Get in Touch
             </h3>

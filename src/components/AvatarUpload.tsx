@@ -1,30 +1,39 @@
 "use client";
 
-import { useRef, useState, useCallback } from "react";
+import { useRef, useState, useEffect, useCallback } from "react";
 import { Lock, X } from "lucide-react";
 
-const OWNER_PIN = "1234"; // 🔴 apna secret PIN yahan rakho
+const OWNER_PIN = "1234"; // 🔴 apna secret PIN
 
 export default function AvatarUpload() {
   const fileRef = useRef<HTMLInputElement | null>(null);
 
-  const [image, setImage] = useState<string | null>(() => {
-    if (typeof window === "undefined") return null;
-    return localStorage.getItem("profile-avatar");
-  });
+  const [image, setImage] = useState<string | null>(null);
+  const [mounted, setMounted] = useState(false);
 
   const [showModal, setShowModal] = useState(false);
   const [pin, setPin] = useState("");
   const [error, setError] = useState("");
 
-  // Open popup
+  /* ✅ Client side pe localStorage read */
+  useEffect(() => {
+    const savedImage = localStorage.getItem("profile-avatar");
+    if (savedImage) {
+      setImage(savedImage);
+    }
+    setMounted(true);
+  }, []);
+
+  if (!mounted) return null; // ⚠️ hydration issue fix
+
+  /* 🔓 Open password modal */
   const handleUnlock = () => {
     setShowModal(true);
     setPin("");
     setError("");
   };
 
-  // Check PIN
+  /* 🔐 PIN check */
   const handleSubmit = useCallback(() => {
     if (pin === OWNER_PIN) {
       setShowModal(false);
@@ -34,7 +43,7 @@ export default function AvatarUpload() {
     }
   }, [pin]);
 
-  // Image change
+  /* 🖼️ Image upload */
   const handleChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
       const file = e.target.files?.[0];
@@ -61,7 +70,7 @@ export default function AvatarUpload() {
       {/* Avatar */}
       <div className="relative mx-auto w-40 h-40 group">
         <img
-          src={image ?? "https://i.pravatar.cc/300"}
+          src={image || "https://i.pravatar.cc/300"}
           alt="Avatar"
           className="w-full h-full rounded-3xl object-cover border border-white/10"
           draggable={false}
@@ -69,16 +78,9 @@ export default function AvatarUpload() {
 
         {/* Lock Overlay */}
         <button
-          type="button"
           onClick={handleUnlock}
-          className="
-            absolute inset-0 rounded-3xl
-            bg-black/40 opacity-0
-            flex items-center justify-center
-            group-hover:opacity-100
-            transition cursor-pointer
-          "
-          aria-label="Change profile photo"
+          className="absolute inset-0 rounded-3xl bg-black/40 opacity-0
+          flex items-center justify-center group-hover:opacity-100 transition"
         >
           <Lock className="text-white" />
         </button>
@@ -93,36 +95,28 @@ export default function AvatarUpload() {
         />
       </div>
 
-      {/* 🔐 PASSWORD POPUP */}
+      {/* 🔐 PASSWORD MODAL */}
       {showModal && (
-        <div className="fixed inset-0 z-9999 flex items-center justify-center bg-black/60">
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60">
           <div className="w-[90%] max-w-sm rounded-3xl bg-black border border-white/10 p-6 text-white relative">
-            {/* Close */}
             <button
               onClick={() => setShowModal(false)}
-              className="absolute top-4 right-4 text-white hover:text-white"
+              className="absolute top-4 right-4"
             >
               <X size={18} />
             </button>
 
-            <h3 className="text-xl font-semibold mb-2 text-center">
+            <h3 className="text-xl font-semibold text-center mb-3">
               Owner Access
             </h3>
-
-            <p className="text-sm text-white text-center mb-4">
-              Enter password to change profile photo
-            </p>
 
             <input
               type="password"
               value={pin}
               onChange={(e) => setPin(e.target.value)}
               placeholder="Enter password"
-              className="
-                w-full rounded-xl bg-black border border-white/20
-                px-4 py-3 text-white outline-none
-                focus:border-(--primary)
-              "
+              className="w-full rounded-xl bg-black border border-white/20
+              px-4 py-3 outline-none"
             />
 
             {error && (
@@ -133,11 +127,7 @@ export default function AvatarUpload() {
 
             <button
               onClick={handleSubmit}
-              className="
-                mt-5 w-full rounded-full bg-(--primary)
-                py-3 text-black font-semibold
-                hover:scale-[1.03] transition
-              "
+              className="mt-5 w-full rounded-full bg-white text-black py-3 font-semibold"
             >
               Unlock
             </button>

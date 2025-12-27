@@ -41,12 +41,12 @@ export default function Hero() {
         </p>
 
         {/* Stats */}
-        <div className="md:mt-14 mt-5 flex gap-12 md:justify-start justify-center">
+        <div className="md:mt-14 mt-5 flex gap-12">
           <div>
              <Heading as="h3" className="text-4xl md:text-5xl font-semibold text-(--primary) ">
                <Counter end={4} />+
              </Heading>
-            <p className="text-sm text-white mt-2 leading-tigh t">
+            <p className="text-sm text-white mt-2 leading-tight">
               YEARS OF <br /> EXPERIENCE
             </p>
           </div>

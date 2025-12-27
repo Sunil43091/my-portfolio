@@ -26,9 +26,8 @@ export default function About() {
           as="h2"
           className="text-4xl md:text-6xl  font-semibold lg:leading-17 leading-10"
         >
-          Designing clean & modern{" "}
+          Designing clean & modern
           <span className="text-(--primary) font-normal">
-            {" "}
             digital experiences
           </span>
         </Heading>
