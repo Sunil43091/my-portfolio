@@ -29,12 +29,12 @@ export default function Hero() {
 
         {/* Heading */}
 
-        <Heading as="h1" className="text-4xl md:text-7xl font-semibold md:text-start text-center">
+        <Heading as="h1" className="text-4xl md:text-7xl font-semibold ">
            Sunil Kumar <span className="text-(--primary) font-normal"> Web Designer</span>
         </Heading>
 
         {/* Subtitle */}
-        <p className="mt-6 max-w-2xl text-white leading-relaxed md:text-start text-center">
+        <p className="mt-6 max-w-2xl text-white leading-relaxed ">
           I design modern, clean, and user-friendly websites that help
           businesses stand out online. Passionate about UI design, responsive
           layouts, and smooth user experiences.

@@ -9,7 +9,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="text-white lg:py-20 py-10  md:text-start text-center ">
+    <footer className="text-white lg:py-20 py-10   ">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 ">
 
         {/* TOP */}

@@ -64,7 +64,7 @@ export default function ContactSection() {
           </button>
           <Heading
             as="h2"
-            className="text-4xl md:text-6xl md:text-start text-center font-semibold leading-tight pb-10"
+            className="text-4xl md:text-6xl  font-semibold leading-tight pb-10"
           >
             Let’s Work
             <span className="text-(--primary) font-normal"> Together!</span>

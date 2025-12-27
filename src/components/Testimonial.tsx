@@ -70,7 +70,7 @@ export default function Testimonial() {
         {/* Heading */}
         <Heading
           as="h2"
-          className="text-4xl md:text-6xl md:text-start text-center font-semibold lg:leading-17 leading-10 pb-10"
+          className="text-4xl md:text-6xl  font-semibold lg:leading-17 leading-10 pb-10"
         >
           Trusted by
           <span className="text-(--primary) font-normal"> Hunderd Clients</span>

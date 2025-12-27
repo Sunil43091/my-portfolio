@@ -24,7 +24,7 @@ export default function About() {
         {/* Heading */}
         <Heading
           as="h2"
-          className="text-4xl md:text-6xl md:text-start text-center font-semibold lg:leading-17 leading-10"
+          className="text-4xl md:text-6xl  font-semibold lg:leading-17 leading-10"
         >
           Designing clean & modern{" "}
           <span className="text-(--primary) font-normal">
@@ -34,7 +34,7 @@ export default function About() {
         </Heading>
 
         {/* Paragraph */}
-        <p className="mt-10 max-w-3xl text-white leading-relaxed text-base md:text-lg md:text-start text-center">
+        <p className="mt-10 max-w-3xl text-white leading-relaxed text-base md:text-lg ">
           Hi, I’m <span className="text-(--primary)">Sunil Kumar</span>, a passionate
           Web Designer with over{" "}
           <span className="text-(--primary)">4 years of experience</span> creating
@@ -42,13 +42,13 @@ export default function About() {
           businesses and individuals.
         </p>
 
-        <p className="mt-6 max-w-3xl text-white leading-relaxed text-base md:text-lg md:text-start text-center">
+        <p className="mt-6 max-w-3xl text-white leading-relaxed text-base md:text-lg ">
           I specialize in modern UI design, responsive layouts, and converting
           ideas into pixel-perfect web interfaces using HTML, CSS, Tailwind,
           WordPress, Shopify, and modern frontend tools.
         </p>
 
-        <p className="mt-6 max-w-3xl text-white leading-relaxed text-base md:text-lg md:text-start text-center">
+        <p className="mt-6 max-w-3xl text-white leading-relaxed text-base md:text-lg ">
           I believe good design is not just about looks—it’s about clarity,
           usability, and delivering a smooth user experience that helps brands
           grow online.
