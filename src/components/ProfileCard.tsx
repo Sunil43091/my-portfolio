@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Instagram, Twitter, Dribbble, Github, Mail, Download } from "lucide-react";
+import { Instagram, Twitter, Dribbble, Github, Download } from "lucide-react";
 
 export default function ProfileCard() {
   const [isActive, setIsActive] = useState(false);
@@ -86,19 +86,6 @@ export default function ProfileCard() {
           </a>
         ))}
       </div>
-
-      {/* Hire Me Button (MAIL) */}
-      <a
-        href="mailto:sunilkumar@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Sunil,%0A%0AI%20want%20to%20hire%20you."
-        className="
-          mt-8 w-full rounded-full bg-(--primary)
-          py-3 text-black font-semibold
-          flex items-center justify-center gap-2
-          hover:scale-[1.03] transition cursor-pointer
-        "
-      >
-        <Mail size={18} /> HIRE ME
-      </a>
 
       {/* Resume Button */}
       <a
