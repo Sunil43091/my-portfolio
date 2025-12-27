@@ -77,9 +77,9 @@ export default function ProjectsPage() {
   };
 
   return (
-    <section className="lg:py-28 py-8  text-white" id="projects">
+    <section className="lg:py-28 py-8 md:mt-0 mt-20  text-white" id="projects">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 ">
-        <div className=" flex items-center justify-between ">
+        <div className=" flex items-center justify-between md:pb-0 pb-10">
           <div
             className="
             w-12 h-12 rounded-full
@@ -94,7 +94,7 @@ export default function ProjectsPage() {
           </div>
           <Heading
             as="h2"
-            className="text-4xl md:text-6xl  font-semibold lg:leading-17 leading-10 pb-10"
+            className="text-4xl md:text-6xl  font-semibold lg:leading-17 leading-10 md:pb-10"
           >
             All
             <span className="text-(--primary) font-normal"> Projects</span>
