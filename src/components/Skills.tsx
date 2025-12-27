@@ -122,7 +122,7 @@ export default function Skills() {
             <div key={i} className="flex flex-col items-center text-center">
               {/* Oval */}
               <div
-                className=" w-32 sm:w-44 h-32 sm:h-32 rounded-2xl
+                className=" w-full sm:w-44 h-32 sm:h-32 rounded-2xl
                 border border-white/20
                 flex flex-col items-center justify-center
                 mb-6 hover:border-(--primary)/40 transition"
