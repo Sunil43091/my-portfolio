@@ -65,7 +65,7 @@ export default function ProfileCard() {
       <p className="text-lg">sk3645797@gmail.com</p>
       <p className="text-white mt-1">Based in India 🇮🇳</p>
 
-      <p className="text-xs text-gray-500 mt-4">
+      <p className="text-xs text-(--primary) mt-4">
         © {new Date().getFullYear()} Sunil Kumar
       </p>
 

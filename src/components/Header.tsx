@@ -13,7 +13,7 @@ export default function Header({ onMenuClick, onConfigClick }: Props) {
      <header className="bg-black">
        <h2 className="text-3xl text-(--primary) fixed top-6 left-20 z-50">
         <Link to="/">
-          SP<span className="text-(--primary)">.</span>
+        <img src="/logo.svg" alt="" className="w-10 h-10"/>
         </Link>
       </h2>
 

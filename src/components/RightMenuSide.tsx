@@ -55,7 +55,9 @@ export default function RightMenuSide({ open, onClose }: Props) {
         `}
       >
         <h2 className="text-3xl absolute top-4 left-6 text-(--primary)">
-          SP<span className="text-white">.</span>
+        <Link to="/">
+        <img src="/logo.svg" alt="" className="w-10 h-10"/>
+        </Link>
         </h2>
         {/* CLOSE */}
         <button

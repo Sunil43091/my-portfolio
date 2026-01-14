@@ -6,6 +6,7 @@ import {
   Phone,
   MapPinHouse 
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -16,7 +17,9 @@ export default function Footer() {
           {/* BRAND */}
           <div className="md:text-start text-center">
             <h2 className="text-3xl font-semibold text-(--primary) mb-3">
-              SP<span className="text-(--primary)">.</span>
+                 <Link to="/">
+        <img src="/logo.svg" alt="" className="w-10 h-10"/>
+        </Link>
             </h2>
             <p className="text-sm leading-relaxed">
   Crafting modern, visually appealing websites with clean UI

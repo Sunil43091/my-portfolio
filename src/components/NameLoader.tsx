@@ -7,7 +7,7 @@ type Props = {
 };
 
 export default function NameLoader({ onFinish }: Props) {
-  const name = "Sunil Kumar Designer";
+  const name = "Sunil Designer";
   const [visibleCount, setVisibleCount] = useState(0);
 
   useEffect(() => {
