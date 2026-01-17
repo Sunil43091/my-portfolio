@@ -55,11 +55,14 @@ export default function ProfileCard() {
           </span>
         </p>
       </div>
-      <img
-        src="/sunilkumar.jpeg"
-        className="mx-auto w-40 h-40 rounded-3xl object-cover grayscale mb-6"
-        alt="Sunil Kumar"
-      />
+   <div className="flex justify-center items-center">
+  <img
+    src="/sunilkumar.jpeg"
+    alt="Sunil Kumar"
+    className="w-40 h-40 rounded-3xl object-cover grayscale mb-6"
+  />
+</div>
+
 
       {/* Info */}
       <p className="text-lg">sk3645797@gmail.com</p>

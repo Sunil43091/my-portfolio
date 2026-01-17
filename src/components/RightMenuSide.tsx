@@ -8,9 +8,10 @@ import {
   MessageSquare,
   MessageCircle,
   FolderKanban,
-  Mail, // ⭐ PROJECT ICON
+  Mail,
+  Linkedin, // ⭐ PROJECT ICON
 } from "lucide-react";
-import { Instagram, Twitter, Dribbble, Github } from "lucide-react";
+import { Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import ResumeButton from "./ResumeButton";
 const menu = [
@@ -55,9 +56,9 @@ export default function RightMenuSide({ open, onClose }: Props) {
         `}
       >
         <h2 className="text-3xl absolute top-4 left-6 text-(--primary)">
-        <Link to="/">
-        <img src="/logo.svg" alt="" className="w-10 h-10"/>
-        </Link>
+          <Link to="/">
+            <img src="/logo.svg" alt="" className="w-10 h-10" />
+          </Link>
         </h2>
         {/* CLOSE */}
         <button
@@ -121,33 +122,40 @@ export default function RightMenuSide({ open, onClose }: Props) {
               </li>
             );
           })}
-              <div className="px-3">
-           <Link to="mailto:deepak@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Deepak,%0A%0AI%20want%20to%20hire%20you.">
-            <button
-              className="
+          <div className="px-3">
+            <Link to="mailto:deepak@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Deepak,%0A%0AI%20want%20to%20hire%20you.">
+              <button
+                className="
               mt-8 w-full rounded-full bg-(--primary)
               py-3 text-black font-semibold
               flex items-center justify-center gap-2
               hover:scale-[1.03] transition cursor-pointer
             "
-            >
-              <Mail size={18} /> HIRE ME
-            </button>
-          </Link>
-          <ResumeButton />
-         </div>
+              >
+                <Mail size={18} /> HIRE ME
+              </button>
+            </Link>
+            <ResumeButton />
+          </div>
           <div className="flex justify-center gap-4 mt-6">
-            {[Instagram, Twitter, Dribbble, Github].map((Icon, i) => (
+            {[
+              {
+                Icon: Linkedin,
+                url: "https://www.linkedin.com/in/sunil-kumar-7495601a5/",
+              },
+              { Icon: Github, url: "https://github.com/Sunil43091" },
+            ].map((item, i) => (
               <a
                 key={i}
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-(--primary) hover:text-(--primary)"
+                href={item.url} // 🔹 Link yahan set hota hai
+                target="_blank" // 🔹 Naya tab me open
+                rel="noopener noreferrer" // 🔹 Security ke liye
+                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
               >
-                <Icon size={18} />
+                <item.Icon size={18} />
               </a>
             ))}
           </div>
-
-     
         </ul>
       </div>
     </>
