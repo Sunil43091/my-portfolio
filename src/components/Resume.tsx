@@ -48,7 +48,7 @@ export default function Resume() {
             <span className="absolute -left-5.25 top-2 w-3 h-3 rounded-full bg-(--primary)" />
             <p className="text-sm text-white mb-4">2023 – Nov 2025</p>
             <h3 className="text-xl font-medium">
-              Web Designer / Frontend Developer
+            Frontend Developer
             </h3>
             <p className="text-(--primary) mb-2">BinaryData Pvt Ltd, Mohali</p>
             <p className="text-white text-sm leading-relaxed">
@@ -62,7 +62,7 @@ export default function Resume() {
           <div className="relative">
             <span className="absolute -left-5.25 top-2 w-3 h-3 rounded-full bg-(--primary)" />
             <p className="text-sm text-white mb-4">2022 – 30 April 2023</p>
-            <h3 className="text-xl font-medium">Junior Web Designer</h3>
+            <h3 className="text-xl font-medium">Junior Frontend Developer</h3>
             <p className="text-(--primary) mb-2">ARC Web Media Solution</p>
             <p className="text-white text-sm leading-relaxed">
               Started career as a web designer, worked on website layouts, UI

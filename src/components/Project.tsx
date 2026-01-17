@@ -7,22 +7,22 @@ const projects = [
   {
     title: "E-commerce Website",
     tech: "Next.js · Tailwind · Shopify",
-    image: "https://picsum.photos/900/600?1",
+    image: "https://images.unsplash.com/photo-1579389083175-247ef703006f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2plY3QlMjBpdHxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     title: "Corporate Landing Page",
     tech: "React · Tailwind · UI/UX",
-    image: "https://picsum.photos/900/600?2",
+    image: "https://images.unsplash.com/photo-1579389083123-53a622ebaec2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHByb2plY3QlMjBpdHxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     title: "Portfolio Website",
     tech: "Next.js · Animation · SEO",
-    image: "https://picsum.photos/900/600?3",
+    image: "https://images.unsplash.com/photo-1759844197486-5b3612c7d534?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2plY3QlMjBpdHxlbnwwfHwwfHx8MA%3D%3D",
   },
   {
     title: "Dashboard UI",
     tech: "Next.js · Charts · Admin",
-    image: "https://picsum.photos/900/600?4",
+    image: "https://media.istockphoto.com/id/1144645520/photo/busy-call-centre-in-operation.webp?a=1&b=1&s=612x612&w=0&k=20&c=T6ZwyGztBHa-dwPacz2Vc8kFnh4L1p0W1rsWO4CDJQA=",
   },
 ];
 
