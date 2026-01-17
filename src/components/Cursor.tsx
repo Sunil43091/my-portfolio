@@ -67,7 +67,7 @@ export default function Cursor() {
 
   return (
     <>
-      <div id="dot" ref={dotRef} />
+      <div id="dot " ref={dotRef} />
       <div id="ball" ref={ballRef} />
     </>
   );
