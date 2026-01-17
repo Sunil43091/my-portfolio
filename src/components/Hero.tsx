@@ -29,7 +29,7 @@ export default function Hero() {
 
         {/* Heading */}
 <Heading as="h1" className="text-4xl md:text-7xl font-semibold">
-  Sunil Kumar <span className="text-(--primary) font-normal"> Web Designer & Frontend Developer
+  Sunil Kumar <span className="text-(--primary) font-normal">Frontend Developer
   </span>
 </Heading>
 

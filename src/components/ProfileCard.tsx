@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Instagram, Twitter, Dribbble, Github, Download } from "lucide-react";
+import {  Github, Download, Linkedin } from "lucide-react";
 
 export default function ProfileCard() {
   const [isActive, setIsActive] = useState(false);
@@ -71,18 +71,25 @@ export default function ProfileCard() {
 
       {/* Social Icons */}
       <div className="flex justify-center gap-4 mt-6">
-        {[Instagram, Twitter, Dribbble, Github].map((Icon, i) => (
-          <a
-            key={i}
-            href="#"
-            className="w-10 h-10 rounded-full border border-white/20
-            flex items-center justify-center
-            hover:border-(--primary) hover:text-(--primary) transition"
-          >
-            <Icon size={18} />
-          </a>
-        ))}
-      </div>
+  {[
+    { Icon: Linkedin, url: "https://www.linkedin.com/in/sunil-kumar-7495601a5/" },
+    { Icon: Github, url: "https://github.com/Sunil43091" }
+  ].map(({ Icon, url }, i) => (
+    <a
+      key={i}
+      href={url}
+      target="_blank"           // link nava tab vich khulega
+      rel="noopener noreferrer" // security
+      className="w-10 h-10 rounded-full border border-white/20
+                 flex items-center justify-center
+                 hover:border-[var(--primary)] hover:text-[var(--primary)]
+                 transition"
+    >
+      <Icon size={18} />
+    </a>
+  ))}
+</div>
+
 
       {/* Resume Button */}
       <a

@@ -10,7 +10,7 @@ type Props = {
 export default function Header({ onMenuClick, onConfigClick }: Props) {
   return (
     <>
-     <header className="bg-black">
+     <header className="bg-white">
        <h2 className="text-3xl text-(--primary) fixed top-6 left-20 z-50">
         <Link to="/">
         <img src="/logo.svg" alt="" className="w-10 h-10"/>

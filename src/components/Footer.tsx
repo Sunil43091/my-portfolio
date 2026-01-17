@@ -1,7 +1,6 @@
 import {
   Github,
   Linkedin,
-  Twitter,
   Mail,
   Phone,
   MapPinHouse,
@@ -66,22 +65,28 @@ export default function Footer() {
 
             {/* SOCIAL */}
             <div className="flex gap-4 md:justify-start justify-center">
-              {[Github, Linkedin, Twitter].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="
-                    w-10 h-10 rounded-full border border-white/20
-                    flex items-center justify-center
-                    hover:border-(--primary)
-                    hover:text-(--primary)
-                    transition
-                  "
-                >
-                  <Icon className="text-(--primary)" size={16} />
-                </a>
-              ))}
-            </div>
+  {[
+    { Icon: Github, url: "https://github.com/Sunil43091" },
+    { Icon: Linkedin, url: "https://www.linkedin.com/in/sunil-kumar-7495601a5/" },
+  ].map(({ Icon, url }, i) => (
+    <a
+      key={i}
+      href={url}
+      target="_blank" // nava tab vich khulega
+      rel="noopener noreferrer" // security
+      className="
+        w-10 h-10 rounded-full border border-white/20
+        flex items-center justify-center
+        hover:border-[var(--primary)]
+        hover:text-[var(--primary)]
+        transition
+      "
+    >
+      <Icon className="text-[var(--primary)]" size={16} />
+    </a>
+  ))}
+</div>
+
           </div>
         </div>
 
