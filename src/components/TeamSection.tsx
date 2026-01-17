@@ -5,37 +5,37 @@ const team = [
   {
     name: "Rohit Rana",
     role: "Frontend Developer",
-    image: "https://picsum.photos/900/600?1",
+    image: "https://images.unsplash.com/photo-1637855195094-992d3d578f42?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGVhbSUyMGl0fGVufDB8fDB8fHww",
     email: "sahil@gmail.com",
   },
   {
     name: "Arjun Verma",
     role: "UI / UX Designer",
-    image: "https://picsum.photos/900/600?2",
+    image: "https://images.unsplash.com/photo-1531539427495-97c44a449837?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8dGVhbSUyMGl0fGVufDB8fDB8fHww",
     email: "aman@gmail.com",
   },
   {
     name: "Abhinav Developer",
     role: "Backend Developer",
-    image: "https://picsum.photos/900/600?3",
+    image: "https://images.unsplash.com/photo-1675434303097-210c75b61d3f?q=80&w=685&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     email: "rohit@gmail.com",
   },
   {
     name: "Shilpa Sharma",
     role: "Frontend Developer",
-    image: "https://picsum.photos/900/600?4",
+    image: "https://images.unsplash.com/photo-1677078610172-7ff3e0772ba7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjZ8fHRlYW0lMjBpdHxlbnwwfHwwfHx8MA%3D%3D",
     email: "shilpa@gmail.com",
   },
   {
     name: "Sushant Verma",
     role: "UI / UX Designer",
-    image: "https://picsum.photos/900/600?5",
+    image: "https://images.unsplash.com/photo-1632910121591-29e2484c0259?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fHRlYW0lMjBpdHxlbnwwfHwwfHx8MA%3D%3D",
     email: "sushant@gmail.com",
   },
   {
     name: "Jagtar Developer",
     role: "Backend Developer",
-    image: "https://picsum.photos/900/600?6",
+    image: "https://media.istockphoto.com/id/2094337676/photo/diverse-team-working-together-in-modern-co-working-space.webp?a=1&b=1&s=612x612&w=0&k=20&c=FbH7i1I3oCXoRfZKFvGj3jMXnsljD8mPmDmvY4IxQuA=",
     email: "jagtar@gmail.com",
   },
 ];

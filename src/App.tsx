@@ -13,6 +13,7 @@ import AOS from "aos";
 import ScrollArrow from "./components/ScrollArrow";
 import ProjectsPage from "./pages/projects";
 import NameLoader from "./components/NameLoader";
+import Cursor from "./components/Cursor";
 // import SiteLoader from "./components/SiteLoader";
 export default function App() {
    useEffect(() => {
@@ -28,6 +29,7 @@ const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
+    <Cursor/>
       {loading && <NameLoader onFinish={() => setLoading(false)} />}
        <Header
         onMenuClick={() => {

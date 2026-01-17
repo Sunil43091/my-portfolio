@@ -34,7 +34,7 @@ export default function About() {
         <p className="mt-10 max-w-3xl text-white leading-relaxed text-base md:text-lg">
           Hi, I’m <span className="text-(--primary)">Sunil Kumar</span>, a
           passionate Web Designer & Frontend Developer with over{" "}
-          <span className="text-(--primary)">4+ years of experience</span> in
+          <span className="text-(--primary)">3+ years of experience</span> in
           designing and developing visually appealing, user-friendly, and fully
           responsive websites for businesses and individuals.
         </p>

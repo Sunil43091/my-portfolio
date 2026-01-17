@@ -35,7 +35,7 @@ export default function Hero() {
 
 {/* Subtitle */}
 <p className="mt-6 max-w-2xl text-white leading-relaxed">
-  I’m a passionate Web Designer with 4+ years of experience in crafting
+  I’m a passionate Web Designer with 3+ years of experience in crafting
   modern, responsive, and high-performing websites. Skilled in UI/UX design,
   Figma to HTML, React & Next.js, Tailwind CSS, and WordPress development.
   I focus on clean design, smooth interactions, and user-centric digital
