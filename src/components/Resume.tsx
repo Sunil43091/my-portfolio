@@ -1,77 +1,140 @@
+```tsx
 import Heading from "./Heading";
 import { FileUser } from "lucide-react";
+
+const experience = [
+  {
+    year: "2025 – Present",
+    role: "Frontend Developer",
+    company: "Web Perfection Technology",
+    description:
+      "Building modern web applications using Next.js, React.js, Tailwind CSS, Laravel APIs, and creating scalable, responsive, and performance-focused user interfaces.",
+  },
+
+  {
+    year: "2023 – Nov 2025",
+    role: "Frontend Developer",
+    company: "BinaryData Pvt Ltd, Mohali",
+    description:
+      "Developed responsive websites, landing pages, dashboards, and frontend systems using Tailwind CSS, JavaScript, Shopify, WordPress, and pixel-perfect UI implementation.",
+  },
+
+  {
+    year: "2022 – April 2023",
+    role: "Junior Frontend Developer",
+    company: "ARC Web Media Solution",
+    description:
+      "Started career as a web designer creating responsive layouts, UI designs, HTML, CSS projects, and learning real-world development workflows.",
+  },
+];
 
 export default function Resume() {
   return (
     <section
-      className="relative md:min-h-screen text-white flex items-center md:pt-0 pt-12"
       id="resume"
+      aria-labelledby="resume-heading"
       data-aos="zoom-in"
+      className="
+      relative flex items-center
+      text-white
+      pt-12 md:min-h-screen md:pt-0
+      "
     >
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 md:px-8 lg:px-12">
+      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 md:px-8 lg:px-12">
+
         {/* Badge */}
+
         <div
           className="
-            inline-flex items-center gap-2 px-4 py-1 mb-8
-            rounded-full border border-white/20 text-sm text-white
+          mb-8 inline-flex
+          items-center gap-2
+          rounded-full
+          border border-white/20
+          px-4 py-1
+          text-sm
           "
         >
-          <FileUser className="text-(--primary)" size={20} /> RESUME
+          <FileUser
+            className="text-(--primary)"
+            size={20}
+          />
+
+          RESUME
         </div>
 
         {/* Heading */}
+
         <Heading
           as="h2"
-          className="text-4xl md:text-6xl  font-semibold lg:leading-17 leading-10 pb-10"
+          id="resume-heading"
+          className="
+          pb-6 text-4xl
+          font-semibold leading-10
+          md:text-6xl lg:leading-17
+          "
         >
           My
-          <span className="text-(--primary) font-normal"> Journey</span>
+          <span className="font-normal text-(--primary)">
+            {" "}Journey
+          </span>
         </Heading>
 
+        <p className="mb-12 max-w-2xl text-gray-300">
+          Professional journey as a Web Designer and Frontend Developer
+          specializing in React.js, Next.js, Tailwind CSS,
+          responsive design, UI/UX, and scalable frontend systems.
+        </p>
+
         {/* Timeline */}
-        <div className="relative pl-10 border-l border-white/20 space-y-16">
-          {/* EXPERIENCE 1 */}
-          <div className="relative">
-            <span className="absolute -left-5.25 top-2 w-3 h-3 rounded-full bg-(--primary)" />
-            <p className="text-sm text-white mb-4">2025 – Present</p>
-            <h3 className="text-xl font-medium">Frontend Developer</h3>
-            <p className="text-(--primary) mb-2">Web Perfection Technology</p>
-            <p className="text-white text-sm leading-relaxed">
-              Working on modern web applications using Next.js, React, Tailwind
-              CSS, Laravel APIs, and creating scalable, high-performance user
-              interfaces.
-            </p>
-          </div>
 
-          {/* EXPERIENCE 2 */}
-          <div className="relative">
-            <span className="absolute -left-5.25 top-2 w-3 h-3 rounded-full bg-(--primary)" />
-            <p className="text-sm text-white mb-4">2023 – Nov 2025</p>
-            <h3 className="text-xl font-medium">
-            Frontend Developer
-            </h3>
-            <p className="text-(--primary) mb-2">BinaryData Pvt Ltd, Mohali</p>
-            <p className="text-white text-sm leading-relaxed">
-              Designed and developed responsive websites, landing pages, and
-              dashboards. Worked with Tailwind CSS, JavaScript, WordPress,
-              Shopify, and UI to pixel-perfect frontend conversion.
-            </p>
-          </div>
+        <ol
+          className="
+          relative space-y-16
+          border-l border-white/20
+          pl-10
+          "
+        >
 
-          {/* EXPERIENCE 3 */}
-          <div className="relative">
-            <span className="absolute -left-5.25 top-2 w-3 h-3 rounded-full bg-(--primary)" />
-            <p className="text-sm text-white mb-4">2022 – 30 April 2023</p>
-            <h3 className="text-xl font-medium">Junior Frontend Developer</h3>
-            <p className="text-(--primary) mb-2">ARC Web Media Solution</p>
-            <p className="text-white text-sm leading-relaxed">
-              Started career as a web designer, worked on website layouts, UI
-              design, HTML, CSS, and responsive pages while learning real-world
-              project workflows.
-            </p>
-          </div>
-        </div>
+          {experience.map((item, index) => (
+
+            <li
+              key={index}
+              className="relative"
+            >
+
+              <span
+                aria-hidden="true"
+                className="
+                absolute top-2
+                -left-[21px]
+                h-3 w-3 rounded-full
+                bg-(--primary)
+                "
+              />
+
+              <time className="mb-4 block text-sm">
+                {item.year}
+              </time>
+
+              <h3 className="text-xl font-medium">
+                {item.role}
+              </h3>
+
+              <p className="mb-2 text-(--primary)">
+                {item.company}
+              </p>
+
+              <p className="text-sm leading-relaxed text-white">
+                {item.description}
+              </p>
+
+            </li>
+
+          ))}
+
+        </ol>
       </div>
     </section>
   );
 }
+```
