@@ -172,7 +172,7 @@ export default function Footer() {
           </p>
 
           <p>
-            Designed & Built with ❤️ by{" "}
+            Designed & Built with ❤️  vdaafafafafafafby{" "}
             <span className="text-(--primary)">
               Sunil Kumar
             </span>
