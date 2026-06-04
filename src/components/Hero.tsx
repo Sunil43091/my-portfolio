@@ -1,3 +1,4 @@
+```tsx id="hr8m4z"
 import { Counter } from "./Counter";
 import Heading from "./Heading";
 import { Hand } from "lucide-react";
@@ -6,71 +7,138 @@ export default function Hero() {
   return (
     <section
       id="home"
+      aria-labelledby="hero-heading"
       className="
-        relative md:min-h-screen
-        flex items-center justify-center
-        md:pt-0 pt-28
-        text-white overflow-hidden
+      relative md:min-h-screen
+      flex items-center justify-center
+      overflow-hidden text-white
+      pt-28 md:pt-0
       "
     >
-      {/* Background */}
-      {/* Content */}
-      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20  md:px-8 lg:px-12 xl:px-20 2xl:px-20">
+      <div
+        className="
+        relative z-10
+        mx-auto max-w-4xl
+        px-4 sm:px-6
+        md:px-8 lg:px-12 xl:px-20
+        "
+      >
         {/* Badge */}
+
         <div
           className="
-            inline-flex items-center gap-2 px-4 py-1 mb-6
-            rounded-full border border-white/20
-            text-sm text-white
+          mb-6 inline-flex items-center
+          gap-2 rounded-full
+          border border-white/20
+          px-4 py-1 text-sm
           "
         >
-          <Hand className="text-(--primary)" size={20} /> HELLO, I’M
+          <Hand
+            className="text-(--primary)"
+            size={20}
+          />
+
+          HELLO, I'M
         </div>
 
-        {/* Heading */}
-        <Heading as="h1" className="text-4xl md:text-7xl font-semibold">
+        {/* Main Heading */}
+
+        <Heading
+          as="h1"
+          id="hero-heading"
+          className="
+          text-4xl font-semibold
+          md:text-7xl
+          "
+        >
           Sunil Kumar{" "}
-          <span className="text-(--primary) font-normal">
-            Frontend Developer
+
+          <span className="font-normal text-(--primary)">
+            Web Designer & Frontend Developer
           </span>
         </Heading>
 
-        {/* Subtitle */}
-        <p className="mt-6 max-w-2xl text-white leading-relaxed">
-          I’m a passionate Web Designer with 3+ years of experience in crafting
-          modern, responsive, and high-performing websites. Skilled in UI/UX
-          design, Figma to HTML, React & Next.js, Tailwind CSS, and WordPress
-          development. I focus on clean design, smooth interactions, and
-          user-centric digital experiences that help brands grow online.
+        {/* SEO Paragraph */}
+
+        <p
+          className="
+          mt-6 max-w-2xl
+          leading-relaxed text-white
+          "
+        >
+          I’m a passionate{" "}
+          <strong>
+            Web Designer and Frontend Developer
+          </strong>{" "}
+          with 3+ years of experience creating
+          responsive websites, modern UI/UX,
+          landing pages, portfolio websites,
+          and high-performing web applications.
+
+          Specialized in Figma to HTML,
+          React.js, Next.js, Tailwind CSS,
+          WordPress, Shopify, and responsive
+          frontend development focused on
+          performance and user experience.
         </p>
 
         {/* Stats */}
-        <div className="md:mt-14 mt-5 flex gap-12">
+
+        <div className="mt-5 flex gap-12 md:mt-14">
+
           <div>
+
             <Heading
-              as="h3"
-              className="text-4xl md:text-5xl font-semibold text-(--primary) "
+              as="h2"
+              className="
+              text-4xl font-semibold
+              text-(--primary)
+              md:text-5xl
+              "
             >
               <Counter end={3} />+
             </Heading>
-            <p className="text-sm text-white mt-2 leading-tight">
-              YEARS OF <br /> EXPERIENCE
+
+            <span className="sr-only">
+              More than 3 years experience
+            </span>
+
+            <p className="mt-2 text-sm leading-tight">
+              YEARS OF
+              <br />
+              EXPERIENCE
             </p>
+
           </div>
 
           <div>
+
             <Heading
-              as="h3"
-              className="text-4xl md:text-5xl font-semibold text-(--primary) "
+              as="h2"
+              className="
+              text-4xl font-semibold
+              text-(--primary)
+              md:text-5xl
+              "
             >
               <Counter end={100} />+
             </Heading>
-            <p className="text-sm text-white mt-2 leading-tight">
-              PROJECTS COMPLETED <br /> WORLDWIDE
+
+            <span className="sr-only">
+              More than 100 projects completed
+            </span>
+
+            <p className="mt-2 text-sm leading-tight">
+              PROJECTS COMPLETED
+              <br />
+              WORLDWIDE
             </p>
+
           </div>
+
         </div>
       </div>
     </section>
   );
 }
+```
