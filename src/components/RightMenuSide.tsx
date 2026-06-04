@@ -9,11 +9,15 @@ import {
   MessageCircle,
   FolderKanban,
   Mail,
-  Linkedin, // ⭐ PROJECT ICON
+  Linkedin,
+  Github,
+  X,
 } from "lucide-react";
-import { Github } from "lucide-react";
+
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import ResumeButton from "./ResumeButton";
+
 const menu = [
   { icon: Home, id: "home", label: "Home" },
   { icon: User, id: "about", label: "About" },
@@ -31,133 +35,237 @@ type Props = {
   onClose: () => void;
 };
 
-export default function RightMenuSide({ open, onClose }: Props) {
-  const scrollToSection = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-    });
+export default function RightMenuSide({
+  open,
+  onClose,
+}: Props) {
+
+  useEffect(() => {
+    const handleEscape = (
+      e: KeyboardEvent
+    ) => {
+      if (e.key === "Escape") {
+        onClose();
+      }
+    };
+
+    if (open) {
+      document.body.style.overflow =
+        "hidden";
+
+      window.addEventListener(
+        "keydown",
+        handleEscape
+      );
+    }
+
+    return () => {
+      document.body.style.overflow =
+        "";
+
+      window.removeEventListener(
+        "keydown",
+        handleEscape
+      );
+    };
+  }, [open, onClose]);
+
+  const scrollToSection = (
+    id: string
+  ) => {
+    document
+      .getElementById(id)
+      ?.scrollIntoView({
+        behavior: "smooth",
+      });
+
     onClose();
   };
 
   return (
     <>
-      {/* BACKDROP */}
-      {open && (
-        <div onClick={onClose} className="fixed inset-0 bg-black/50 z-40" />
-      )}
+      {/* Backdrop */}
 
-      {/* MENU */}
-      <div
-        className={`
-          fixed top-0 right-0 h-full w-72 bg-black text-white z-50
-          border-l border-white/15
-          transform transition-transform duration-300
-          ${open ? "translate-x-0" : "translate-x-full"}
-        `}
-      >
-        <h2 className="text-3xl absolute top-4 left-6 text-(--primary)">
-          <Link to="/">
-            <img src="/logo.svg" alt="" className="w-10 h-10" />
-          </Link>
-        </h2>
-        {/* CLOSE */}
-        <button
+      {open && (
+        <div
+          aria-hidden="true"
           onClick={onClose}
           className="
-            absolute top-4 right-4 w-10 h-10
-            rounded-full border border-[#575757]
-            bg-[#1f1f1f]
-            transition hover:border-(--primary)
+          fixed inset-0 z-40
+          bg-black/50
+          "
+        />
+      )}
+
+      {/* Sidebar */}
+
+      <nav
+        aria-label="Main Navigation"
+        className={`
+        fixed top-0 right-0
+        z-50 h-full w-72
+        border-l border-white/15
+        bg-black text-white
+        transition-transform duration-300
+        ${
+          open
+            ? "translate-x-0"
+            : "translate-x-full"
+        }
+        `}
+      >
+        {/* Logo */}
+
+        <Link
+          to="/"
+          className="
+          absolute left-6 top-4
           "
         >
-          ✕
+          <img
+            src="/logo.svg"
+            alt="Sunil Kumar Logo"
+            className="h-10 w-10"
+          />
+        </Link>
+
+        {/* Close */}
+
+        <button
+          type="button"
+          aria-label="Close Menu"
+          onClick={onClose}
+          className="
+          absolute right-4 top-4
+          flex h-10 w-10
+          items-center justify-center
+          rounded-full
+          border border-[#575757]
+          bg-[#1f1f1f]
+          hover:border-(--primary)
+          "
+        >
+          <X size={18} />
         </button>
 
-        {/* MENU LIST */}
+        {/* Links */}
+
         <ul
-          className=" mt-24
-          border-t border-white/15
-          relative
-          max-h-[80vh]
+          className="
+          mt-24 max-h-[80vh]
           overflow-y-auto
-          pr-2"
+          border-t border-white/15
+          pr-2
+          "
         >
           {menu.map((item) => {
             const Icon = item.icon;
+
             return (
               <li
                 key={item.id}
-                className="border-b border-white/15 px-3 py-4 m-0"
+                className="
+                border-b border-white/15
+                px-3 py-4
+                "
               >
                 <button
-                  onClick={() => scrollToSection(item.id)}
+                  type="button"
+                  aria-label={item.label}
+                  onClick={() =>
+                    scrollToSection(
+                      item.id
+                    )
+                  }
                   className="
-                    group flex items-center gap-4 w-full text-left
-                    text-lg font-medium
-                    text-white transition
-                    hover:text-(--primary)
+                  group flex w-full
+                  items-center gap-4
+                  text-left text-lg
+                  hover:text-(--primary)
                   "
                 >
-                  {/* ICON */}
                   <Icon
                     size={18}
-                    className="text-(--primary) transition group-hover:text-(--primary)"
+                    className="text-(--primary)"
                   />
 
-                  {/* LABEL */}
-                  <span className="relative inline-block">
-                    {item.label}
-
-                    {/* underline */}
-                    <span
-                      className="
-                        absolute left-0 -bottom-1 h-0.5 w-0
-                        bg-(--primary)
-                        transition-all duration-300
-                        group-hover:w-full
-                      "
-                    />
-                  </span>
+                  {item.label}
                 </button>
               </li>
             );
           })}
+
+          {/* CTA */}
+
           <div className="px-3">
-            <Link to="mailto:deepak@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Deepak,%0A%0AI%20want%20to%20hire%20you.">
-              <button
-                className="
-              mt-8 w-full rounded-full bg-(--primary)
-              py-3 text-black font-semibold
-              flex items-center justify-center gap-2
-              hover:scale-[1.03] transition cursor-pointer
-            "
-              >
-                <Mail size={18} /> HIRE ME
-              </button>
-            </Link>
+
+            <a
+              href="mailto:sk3645797@gmail.com?subject=Hiring Inquiry"
+              className="
+              mt-8 flex w-full
+              items-center justify-center
+              gap-2 rounded-full
+              bg-(--primary)
+              py-3 font-semibold
+              text-black
+              "
+            >
+              <Mail size={18} />
+              HIRE ME
+            </a>
+
             <ResumeButton />
+
           </div>
-          <div className="flex justify-center gap-4 mt-6">
+
+          {/* Social */}
+
+          <div className="mt-6 flex justify-center gap-4">
+
             {[
               {
                 Icon: Linkedin,
                 url: "https://www.linkedin.com/in/sunil-kumar-7495601a5/",
+                label: "LinkedIn",
               },
-              { Icon: Github, url: "https://github.com/Sunil43091" },
-            ].map((item, i) => (
-              <a
-                key={i}
-                href={item.url} // 🔹 Link yahan set hota hai
-                target="_blank" // 🔹 Naya tab me open
-                rel="noopener noreferrer" // 🔹 Security ke liye
-                className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
-              >
-                <item.Icon size={18} />
-              </a>
-            ))}
+
+              {
+                Icon: Github,
+                url: "https://github.com/Sunil43091",
+                label: "Github",
+              },
+            ].map(
+              (
+                item,
+                index
+              ) => (
+                <a
+                  key={index}
+                  href={item.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={item.label}
+                  className="
+                  flex h-10 w-10
+                  items-center justify-center
+                  rounded-full
+                  border border-white/20
+                  transition
+                  hover:border-(--primary)
+                  hover:text-(--primary)
+                  "
+                >
+                  <item.Icon
+                    size={18}
+                  />
+                </a>
+              )
+            )}
+
           </div>
+
         </ul>
-      </div>
+      </nav>
     </>
   );
 }
