@@ -5,9 +5,9 @@ import {
   Mail,
   Phone,
   MapPinHouse,
-} from "lucide-react";
+} from "lucide-react"
 
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
 
 export default function Footer() {
   return (
